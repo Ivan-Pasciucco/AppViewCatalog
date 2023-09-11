@@ -1,0 +1,32 @@
+<mvc:View
+    controllerName="sap.demo.appview.appviewcatalog.controller.List"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Page title="List view">
+        <content>
+            <VBox class="sapUIContentPadding sapuiSmallMargin">
+                <List
+                    id="productList"
+                    headerText="Productos"
+                    items="{path: 'mProduct>/ProductCollection'}"
+                    mode="MultiSelect"
+                    itemPress="onPressProduct"
+                    growing="true"
+                    growingThreshold="10"
+                    growingScrollToLoad="false"
+                    includeItemInSelection="true">
+
+                    <StandardListItem
+                        title="{mProduct>Name}"
+                        description="{mProduct>Description}"
+                        icon="{mProduct>ProductPicUrl}"
+                        type="Active"
+                        iconDensityAware="false"
+				        iconInset="false" />
+                </List>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>
