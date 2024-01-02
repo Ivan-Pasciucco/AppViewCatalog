@@ -1,0 +1,23 @@
+<mvc:View
+    controllerName="sap.demo.appview.appviewcatalog.controller.Form"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Page id="_IDGenPage1" title="List view">
+        <content>
+            <Text
+                maxLines=""
+                renderWhitespace="false"
+                text="Soy una vista form"
+                textAlign="Begin"
+                textDirection="Inherit"
+                width=""
+                wrapping="true"
+                wrappingType="Normal"
+            >
+                
+            </Text>
+        </content>
+    </Page>
+</mvc:View>

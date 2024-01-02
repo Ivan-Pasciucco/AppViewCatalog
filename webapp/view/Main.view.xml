@@ -1,23 +1,38 @@
-<mvc:View
-    controllerName="sap.demo.appview.appviewcatalog.controller.Main"
-    xmlns:mvc="sap.ui.core.mvc"
-    displayBlock="true"
+<mvc:View controllerName="sap.demo.appview.appviewcatalog.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns="sap.m"
->
-    <Page
-        id="page"
-        title="{i18n>title}"
-    >
+    xmlns:f="sap.f">
+    <Page id="page" title="{i18n>title}">
         <content>
-       	<Panel headerText="Tipos de Vista" width="auto" class="sapUiResponsiveMargin">
-            <VBox class="sapUITinyMargin">
-                <GenericTile header="soy un tile" press="onPressTile">
-                    <TileContent>
-                        <Label text="soy la descripcion del tile" wrapping="true" />
-                    </TileContent>
-                </GenericTile>
-            </VBox>
-        </Panel>
+            <ScrollContainer width="auto" height="100%" vertical="true" id="_IDGenScrollContainer1">
+                <Panel headerText="Tipos de Vista" width="auto" class="sapUiMediumMargin" id="_IDGenPanel1" >
+                    <f:GridContainer id="_IDGenGridContainer1" class="sapuiSmallMargin" items="{mTile>/TileCollection}">
+                        <f:layout>
+                            <f:GridContainerSettings id="_IDGenGridContainerSettings1" rowSize="84px" columnSize="84px" gap="8px" />
+                        </f:layout>
+                        <f:layoutS>
+                            <f:GridContainerSettings id="_IDGenGridContainerSettings2" rowSize="70px" columnSize="70px" gap="8px" />
+                        </f:layoutS>
+                        <GenericTile id="_IDGenGenericTile1" header="{mTile>Title}"  press="onPressTile" headerImage="{mTile>Icon}">
+                        <layoutData>
+                            <f:GridContainerItemLayoutData id="_IDGenGridContainerItemLayoutData1" rows="2" columns="2" />
+                        </layoutData>
+                            <TileContent id="_IDGenTileContent1" >
+                                <Label id="_IDGenLabel1" text="{mTile>Description}" wrapping="true" />
+                            </TileContent>
+                        </GenericTile>
+
+                        <GenericTile id="_IDGenGenericTile2" header="{mTile>Title}"  press="onPressTile" headerImage="{mTile>Icon}">
+                        <layoutData>
+                            <f:GridContainerItemLayoutData id="_IDGenGridContainerItemLayoutData2" rows="2" columns="2" />
+                        </layoutData>
+                            <TileContent id="_IDGenTileContent2" >
+                                <Label id="_IDGenLabel2" text="{mTile>Description}" wrapping="true" />
+                            </TileContent>
+                        </GenericTile>
+                    </f:GridContainer>
+                </Panel>
+            </ScrollContainer>
         </content>
     </Page>
 </mvc:View>

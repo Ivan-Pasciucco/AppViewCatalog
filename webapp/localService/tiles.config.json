@@ -1,0 +1,20 @@
+{
+    "TileCollection":[
+
+        {
+            "Title": "View List",
+            "Description" : "Visualización de colección de Items",
+            "Icon": "sap-icon://list",
+            "view": "ViewList"
+
+        },
+        {
+            "Title": "View Form",
+            "Description" : "Visualización de Formularios",
+            "Icon": "sap-icon://list",
+            "view": "ViewForm"
+
+        }
+
+    ]
+}

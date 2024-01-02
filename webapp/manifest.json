@@ -34,7 +34,12 @@
       "product-srv" : {
         "uri": "localService/db.data.json",
         "type": "JSON"
+      },
+      "tiles-srv" : {
+        "uri": "localService/tiles.config.json",
+        "type": "JSON"
       }
+
     }
   },
   "sap.ui": {
@@ -54,7 +59,7 @@
     }
   },
   "sap.ui5": {
-    "flexEnabled": false,
+    "flexEnabled": true,
     "dependencies": {
       "minUI5Version": "1.117.1",
       "libs": {
@@ -82,6 +87,10 @@
       "mProduct":{
         "type": "sap.ui.model.json.JSONModel",
         "dataSource": "product-srv"
+      },
+      "mTile":{
+        "type": "sap.ui.model.json.JSONModel",
+        "dataSource": "tiles-srv"
       }
     },
     "resources": {
@@ -115,6 +124,13 @@
           "target": [
             "TargetList"
           ]
+        },
+        {
+          "name": "ViewForm",
+          "pattern": "ViewForm",
+          "target": [
+            "TargetForm"
+          ]
         }
       ],
       "targets": {
@@ -131,6 +147,13 @@
           "clearControlAggregation": false,
           "viewId": "List",
           "viewName": "List"
+        },
+        "TargetForm":{
+          "viewType": "XML",
+          "transition":"slide",
+          "clearControlAggregation": false,
+          "viewId": "Form",
+          "viewName": "Form"
         }
       }
     },
