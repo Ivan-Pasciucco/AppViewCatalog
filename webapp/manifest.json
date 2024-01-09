@@ -61,7 +61,7 @@
   "sap.ui5": {
     "flexEnabled": true,
     "dependencies": {
-      "minUI5Version": "1.117.1",
+      "minUI5Version": "1.108.0",
       "libs": {
         "sap.m": {},
         "sap.ui.core": {},
@@ -108,7 +108,10 @@
         "viewPath": "sap.demo.appview.appviewcatalog.view",
         "controlAggregation": "pages",
         "controlId": "app",
-        "clearControlAggregation": false
+        "clearControlAggregation": false,
+        "bypassed": {
+          "target": "TargetNotFound"
+        }
       },
       "routes": [
         {
@@ -130,6 +133,13 @@
           "pattern": "ViewForm",
           "target": [
             "TargetForm"
+          ]
+        },
+        {
+          "name": "ViewDetail",
+          "pattern": "ViewDetail/{productId}",
+          "target": [
+            "TargetDetail"
           ]
         }
       ],
@@ -154,7 +164,22 @@
           "clearControlAggregation": false,
           "viewId": "Form",
           "viewName": "Form"
+        },
+        "TargetDetail":{
+          "viewType": "XML",
+          "transition":"slide",
+          "clearControlAggregation": false,
+          "viewId": "Detail",
+          "viewName": "Detail"
+        },
+        "TargetNotFound":{
+          "viewType": "XML",
+          "transition":"slide",
+          "clearControlAggregation": false,
+          "viewId": "NotFound",
+          "viewName": "NotFound"
         }
+
       }
     },
     "rootView": {

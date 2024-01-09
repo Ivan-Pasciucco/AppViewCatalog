@@ -1,0 +1,82 @@
+<mvc:View
+	controllerName="sap.demo.appview.appviewcatalog.controller.Detail"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	displayBlock="true"
+	height="100%"
+	busyIndicatorDelay="0"
+	xmlns:uxap="sap.uxap"
+	xmlns:layout="sap.ui.layout"
+>
+<Page id="_IDGenPage1">
+<uxap:ObjectPageLayout id="_IDGenObjectPageLayout1" >
+	<uxap:headerTitle>
+		<uxap:ObjectPageDynamicHeaderTitle id="_IDGenObjectPageDynamicHeaderTitle1" >
+<!-- 			cuando esta comprimida la cabecera muestra una imagen y el id
+ -->			<uxap:snappedHeading>
+				<FlexBox id="_IDGenFlexBox1" fitContainer="false" alignItems="Center">
+					<Avatar id="_IDGenAvatar1" src="{mProduct>ProductPicUrl}" class="sapUiTinyMarginEnd"></Avatar>
+					<Title id="_IDGenTitle1" text="{mProduct>ProductId}"></Title>
+				</FlexBox>
+			</uxap:snappedHeading>
+			<!-- muestra nombre y categoria -->
+			<uxap:snappedContent>
+				<Title id="_IDGenTitle2" text="{mProduct>Name} - {mProduct>Category}"></Title>
+			</uxap:snappedContent>
+<!-- 			se visualiza cuando esta expandido -->
+			<uxap:expandedContent>
+			<Title id="_IDGenTitle3" text="{mProduct>ProductId} - {mProduct>Name}" wrapping="true"></Title>
+			</uxap:expandedContent>
+		</uxap:ObjectPageDynamicHeaderTitle>
+	</uxap:headerTitle>
+	<uxap:headerContent>
+		<layout:VerticalLayout id="_IDGenVerticalLayout1">
+			<Avatar id="_IDGenAvatar2" src="{mProduct>ProductPicUrl}" class="sapUiTinyMarginEnd"></Avatar>
+		</layout:VerticalLayout>
+		<layout:VerticalLayout id="_IDGenVerticalLayout2">
+			<Label id="_IDGenLabel1" text="{mProduct>Category}"/>
+			<Label id="_IDGenLabel2" text="{mProduct>MainCategory}"/>
+			<Label id="_IDGenLabel3" text="{mProduct>SupplierName}"/>
+		</layout:VerticalLayout>
+	</uxap:headerContent>
+
+	<uxap:sections>
+		<uxap:ObjectPageSection id="_IDGenObjectPageSection1" >
+			<uxap:subSections>
+				<uxap:ObjectPageSubSection id="_IDGenObjectPageSubSection1" title="Description">
+					<uxap:blocks>
+						<Text id="_IDGenText1" text="{mProduct>Description}"></Text>
+					</uxap:blocks>
+				</uxap:ObjectPageSubSection>
+			</uxap:subSections>
+			<uxap:subSections>
+				<uxap:ObjectPageSubSection id="_IDGenObjectPageSubSection2" title="Peso">
+					<uxap:blocks>
+						<Text id="_IDGenText2" text="{mProduct>WeightMeasure} - {mProduct>WeightUnit}"></Text>
+					</uxap:blocks>
+				</uxap:ObjectPageSubSection>
+			</uxap:subSections>
+			<uxap:subSections>
+				<uxap:ObjectPageSubSection id="_IDGenObjectPageSubSection3" title="Precio">
+					<uxap:blocks>
+						<Text id="_IDGenText3" text="{mProduct>Price} - {mProduct>CurrencyCode} "></Text>
+					</uxap:blocks>
+				</uxap:ObjectPageSubSection>
+			</uxap:subSections>
+			<uxap:subSections>
+				<uxap:ObjectPageSubSection id="_IDGenObjectPageSubSection4" title="Fecha de Venta">
+					<uxap:blocks>
+						<Text id="_IDGenText4" text="{mProduct>DateOfSale}"></Text>
+					</uxap:blocks>
+				</uxap:ObjectPageSubSection>
+			</uxap:subSections>
+		</uxap:ObjectPageSection>
+
+	</uxap:sections>
+</uxap:ObjectPageLayout>
+<!-- <Text id="_IDGenText1" text="{mProduct>ProductId} - {mProduct>Name}"></Text> -->
+
+</Page>
+
+
+</mvc:View>

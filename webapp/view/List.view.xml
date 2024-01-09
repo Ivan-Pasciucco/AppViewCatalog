@@ -9,14 +9,14 @@
             <VBox id="_IDGenVBox1" class="sapUIContentPadding sapuiSmallMargin">
                 <OverflowToolbar id="otb1">
                 	<SearchField width="100%" liveChange=".onSearch"/>
-          
+
                 </OverflowToolbar>
-                
+
                 <List
                     id="listProducts"
                     headerText="Productos"
                     items="{path: 'mProduct>/ProductCollection'}"
-                    mode="SingleSelect"
+                    mode="SingleSelectMaster"
                     itemPress="onPressProduct"
                     growing="true"
                     growingThreshold="10"

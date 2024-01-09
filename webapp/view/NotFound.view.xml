@@ -1,0 +1,21 @@
+<mvc:View
+	controllerName="sap.demo.appview.appviewcatalog.controller.NotFound"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	displayBlock="true"
+	height="100%"
+	busyIndicatorDelay="0"
+>
+<MessagePage
+    description="Ruta no encontrada"
+    enableFormattedText="true"
+    icon="sap-icon://information"
+    iconAlt=""
+    showHeader="false"
+    showNavButton="false"
+    text="Error 404"
+    textDirection="Inherit"
+    title=""
+>
+</MessagePage>
+</mvc:View>
