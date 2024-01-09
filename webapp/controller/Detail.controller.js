@@ -1,5 +1,5 @@
 sap.ui.define([
-    "sap/ui/core/mvc/Controller",
+    "./Base.Controller",
     "sap/ui/core/UIComponent"
 ], function (
     Controller,
@@ -10,11 +10,10 @@ sap.ui.define([
     return Controller.extend("sap.demo.appview.appviewcatalog.controller.Detail", {
 
         onInit: function () {
-            let oRouter = UIComponent.getRouterFor(this);
+            this.getRouter().getRoute("ViewDetail").attachMatched(this._onRouteMatched, this)
+            //let oRouter = UIComponent.getRouterFor(this);
             //pasamos el nombre de la ruta y cuando la encuentra ejecuta la funcion, this es para pasarle el contexto del onInit
-            oRouter.getRoute("ViewDetail").attachMatched(this._onRouteMatched, this)
-
-
+           // oRouter.getRoute("ViewDetail").attachMatched(this._onRouteMatched, this)
         },
 
         _onRouteMatched: function (oEvent) {
@@ -32,7 +31,7 @@ sap.ui.define([
             })
         },
         _onBindingChange: function (oEvent) {
-            let oRouter = UIComponent.getRouterFor(this);
+            let oRouter = this.getRouter()
             //obtenemos el contexto e informacion enlazada mediante el objeto que sera el item
             if(!oEvent.getSource().getBoundContext().getObject()){
                 oRouter.getTargets().display("TargetNotFound")

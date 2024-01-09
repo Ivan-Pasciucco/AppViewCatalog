@@ -8,7 +8,7 @@
 	xmlns:uxap="sap.uxap"
 	xmlns:layout="sap.ui.layout"
 >
-<Page id="_IDGenPage1">
+<Page id="_IDGenPage1" title="View Detail" showNavButton="true" navButtonPress="onNavBack">
 <uxap:ObjectPageLayout id="_IDGenObjectPageLayout1" >
 	<uxap:headerTitle>
 		<uxap:ObjectPageDynamicHeaderTitle id="_IDGenObjectPageDynamicHeaderTitle1" >

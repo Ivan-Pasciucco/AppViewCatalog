@@ -1,6 +1,5 @@
 sap.ui.define([
-    "sap/ui/core/mvc/Controller",
-    "sap/ui/core/UIComponent"
+    "./Base.Controller"
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
@@ -14,8 +13,8 @@ sap.ui.define([
             },
             onPressTile: function(oEvent){
             let viewRoute = oEvent.getSource().getBindingContext("mTile").getObject().view;
-            let oRouter = UIComponent.getRouterFor(this);
-            oRouter.navTo(viewRoute)
+            
+            this.onNavTo(viewRoute, null)
             },
 
         });
