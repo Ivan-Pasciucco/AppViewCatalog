@@ -1,23 +1,189 @@
-<mvc:View
-    controllerName="sap.demo.appview.appviewcatalog.controller.Form"
-    xmlns:mvc="sap.ui.core.mvc"
-    displayBlock="true"
+<mvc:View controllerName="sap.demo.appview.appviewcatalog.controller.Form"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns="sap.m"
->
-    <Page id="_IDGenPage1" title="List view">
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout">
+    <Page id="_IDGenPage1" title="{i18n>title}" showNavButton="true" navButtonPress="onNavBack">
         <content>
-            <Text
-                maxLines=""
-                renderWhitespace="false"
-                text="Soy una vista form"
-                textAlign="Begin"
-                textDirection="Inherit"
-                width=""
-                wrapping="true"
-                wrappingType="Normal"
-            >
-                
-            </Text>
+            <l:Grid id="_IDGenGrid1" defaultIndent="XL3 L3 M0 S0" defaultSpan="XL3 L6 M12 S12">
+                <VBox id="_IDGenVBox1" class="sapUiSmallMargin" alignContent="SpaceAround">
+                    <f:Form id="frmgeneral" editable="true">
+                        <f:title>
+                            <core:Title id="_IDGenTitle1" icon="sap-icon://detail-view" text="General Info" />
+                        </f:title>
+                        <f:layout>
+                            <f:ResponsiveGridLayout id="_IDGenResponsiveGridLayout1" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false" />
+                        </f:layout>
+                        <f:formContainers>
+                            <f:FormContainer id="_IDGenFormContainer1">
+                                <f:formElements>
+                                    <f:FormElement id="_IDGenFormElement1" label="Product Id">
+                                        <f:fields>
+                                            <Input id="txtProductId" description="" value="" />
+                                        </f:fields>
+                                    </f:FormElement>
+
+                                    <f:FormElement id="_IDGenFormElement2" label="Main Category">
+                                        <f:fields>
+                                            <ComboBox id="cboMainCategory" items="{
+                                                    path: 'mProduct>/MainCategories',
+                                                    sorter: {
+                                                        path: 'text'
+                                                    }
+                                                }">
+                                                <core:Item id="_IDGenItem1" key="{mProduct>key}" text="{mProduct>text}" />
+                                            </ComboBox>
+
+
+                                        </f:fields>
+
+                                    </f:FormElement>
+                                    <f:FormElement id="_IDGenFormElement3" label="Category">
+                                        <f:fields>
+                                            <ComboBox id="cboCategory" items="{
+                                                path: 'mProduct>/Categories',
+                                                sorter: {
+                                                    path: 'text'
+                                                }
+                                            }">
+                                                <core:Item id="_IDGenItem2" key="{mProduct>key}" text="{mProduct>text}" />
+                                            </ComboBox>
+                                        </f:fields>
+                                    </f:FormElement>
+
+                                    <f:FormElement id="_IDGenFormElement4" label="Name">
+                                        <f:fields>
+                                            <Input id="txtName" description="" value="" />
+                                        </f:fields>
+                                    </f:FormElement>
+
+                                    <f:FormElement id="_IDGenFormElement5" label="Description">
+                                        <f:fields>
+                                            <Input id="txtDescription" description="" value="" />
+                                        </f:fields>
+                                    </f:FormElement>
+                                    <f:FormElement id="_IDGenFormElement6" label="Supplier Name">
+                                        <f:fields>
+                                            <Input id="txtSupplier" description="" value="" />
+                                        </f:fields>
+                                    </f:FormElement>
+
+                                </f:formElements>
+                                <f:title />
+                                <f:toolbar />
+                            </f:FormContainer>
+                        </f:formContainers>
+                    </f:Form>
+                    <f:Form id="frmWeight" editable="true" class="sapUiSmallMarginTop">
+                        <f:title>
+                            <core:Title id="_IDGenTitle2" icon="sap-icon://measure" text="Weight" />
+                        </f:title>
+                        <f:layout>
+                            <f:ResponsiveGridLayout id="_IDGenResponsiveGridLayout2" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false" />
+                        </f:layout>
+                        <f:formContainers>
+                            <f:FormContainer id="_IDGenFormContainer2">
+                                <f:formElements>
+                                    <f:FormElement id="_IDGenFormElement7" label="Weight Measure">
+                                        <f:fields>
+                                            <Input id="txtWeightMeasure"/>
+                                        </f:fields>
+                                        <f:label>
+                                        </f:label>
+                                    </f:FormElement>
+
+                                    <f:FormElement id="_IDGenFormElement8" label="Weight Unit">
+                                        <f:fields>
+                                            <RadioButtonGroup id="rbgWeightUnit" columns="2">
+                                                <RadioButton id="rbWeightUnit1" text="KG" selected="true"/>
+                                                <RadioButton id="rbWeightUnit2" text="LB"/>
+                                            </RadioButtonGroup>
+                                        </f:fields>
+                                    </f:FormElement>
+                                </f:formElements>
+                                <f:title>
+                                </f:title>
+                                <f:toolbar>
+                                </f:toolbar>
+                            </f:FormContainer>
+                        </f:formContainers>
+                    </f:Form>
+
+                    <f:Form width="" id="frmDetails" editable="true" class="sapUiSmallMarginTop">
+                        <f:title>
+                            <core:Title
+                                emphasized="false"
+                                icon="sap-icon://detail-more"
+                                level="Auto"
+                                text="Details"
+                            >
+                                
+                            </core:Title>
+                        </f:title>
+                    
+                        <f:layout>
+                            <f:ResponsiveGridLayout id="_IDGenResponsiveGridLayout3" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false"/>
+                        </f:layout>
+                        <f:formContainers>
+                            <f:FormContainer id="_IDGenFormContainer3">
+                                <f:formElements>
+                                    <f:FormElement id="_IDGenFormElement9" label="Date of Sale">
+                                        <f:fields>
+                                            <DatePicker id="dtSale"
+                                                placeholder="Enter Date"
+                                                class="sapUiSmallMarginBottom"
+                                            >
+                                            </DatePicker>
+                                        </f:fields>
+                                    </f:FormElement>
+
+                                    <f:FormElement id="_IDGenFormElement10" label="Quantity">
+                                        <f:fields>
+                                            <Input id="txtQuantity" value=""/>
+                                        </f:fields>
+                                        <f:label>
+                                        </f:label>
+                                    </f:FormElement>
+
+                                    <f:FormElement id="_IDGenFormElement11" label="Currency Code">
+                                        <f:fields>
+                                            <RadioButtonGroup id="rbgCurrency" columns="2" valueState="Success" >
+                                                <RadioButton id="rbCurrency1" text="EUR" selected="true"></RadioButton>
+                                                <RadioButton id="rbCurrency2" text="USD"></RadioButton>
+                                            </RadioButtonGroup>
+                                        </f:fields>
+                                        <f:label>
+                                        </f:label>
+                                    </f:FormElement>
+
+                                    <f:FormElement id="_IDGenFormElement12" label="Price">
+                                        <f:fields>
+                                         <Input id="txtPrice" value=""/>
+                                        </f:fields>
+                                        <f:label>
+                                        </f:label>
+                                    </f:FormElement>
+                                </f:formElements>
+                           
+                            </f:FormContainer>
+                         </f:formContainers>
+                        <f:title>
+                        </f:title>
+                        <f:toolbar>
+                        </f:toolbar>
+                    </f:Form>
+
+                </VBox>
+            </l:Grid>
         </content>
+        <footer>
+            <Toolbar>
+                <ToolbarSpacer/>
+                <Button text="Submit" type="Accept" press="onSubmitPress"/>
+                <Button text="Cancel" type="Reject" press="onReject"/>
+            </Toolbar>
+
+        </footer>
     </Page>
 </mvc:View>

@@ -2762,5 +2762,21 @@
 				]
 			}
 		]
-	}
+	},
+	"MainCategories":[
+		{"key":0,"text":"Computer Systems"},
+		{"key":1,"text":"Computer Components"},
+		{"key":2,"text":"Printers & Scanners"},
+		{"key":3,"text":"Software"},
+		{"key":4,"text":"TV, Video & HiFi"},
+		{"key":5,"text":"Smartphones & Tablets"}
+	],
+	"Categories":[
+		{"key":0,"text":"Laptops"},
+		{"key":1,"text":"Accessories"},
+		{"key":2,"text":"Flat Screen Monitors"},
+		{"key":3,"text":"Tablets"},
+		{"key":4,"text":"Smartphones and Tablets"},
+		{"key":5,"text":"Desktop Computers"}
+	]
 }
