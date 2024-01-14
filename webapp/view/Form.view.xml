@@ -8,7 +8,7 @@
         <content>
             <l:Grid id="_IDGenGrid1" defaultIndent="XL3 L3 M0 S0" defaultSpan="XL3 L6 M12 S12">
                 <VBox id="_IDGenVBox1" class="sapUiSmallMargin" alignContent="SpaceAround">
-                    <f:Form id="frmgeneral" editable="true">
+                    <f:Form id="frmGeneral" editable="true">
                         <f:title>
                             <core:Title id="_IDGenTitle1" icon="sap-icon://detail-view" text="General Info" />
                         </f:title>
@@ -20,13 +20,13 @@
                                 <f:formElements>
                                     <f:FormElement id="_IDGenFormElement1" label="Product Id">
                                         <f:fields>
-                                            <Input id="txtProductId" description="" value="" />
+                                            <Input id="txtProductId" description="" value="" change="changeValueState"/>
                                         </f:fields>
                                     </f:FormElement>
 
                                     <f:FormElement id="_IDGenFormElement2" label="Main Category">
                                         <f:fields>
-                                            <ComboBox id="cboMainCategory" items="{
+                                            <ComboBox id="cboMainCategory" change="changeValueState" items="{
                                                     path: 'mProduct>/MainCategories',
                                                     sorter: {
                                                         path: 'text'
@@ -41,7 +41,7 @@
                                     </f:FormElement>
                                     <f:FormElement id="_IDGenFormElement3" label="Category">
                                         <f:fields>
-                                            <ComboBox id="cboCategory" items="{
+                                            <ComboBox id="cboCategory" change="changeValueState" items="{
                                                 path: 'mProduct>/Categories',
                                                 sorter: {
                                                     path: 'text'
@@ -54,18 +54,18 @@
 
                                     <f:FormElement id="_IDGenFormElement4" label="Name">
                                         <f:fields>
-                                            <Input id="txtName" description="" value="" />
+                                            <Input id="txtName" description="" value="" change="changeValueState"/>
                                         </f:fields>
                                     </f:FormElement>
 
                                     <f:FormElement id="_IDGenFormElement5" label="Description">
                                         <f:fields>
-                                            <Input id="txtDescription" description="" value="" />
+                                            <Input id="txtDescription" description="" value="" change="changeValueState"/>
                                         </f:fields>
                                     </f:FormElement>
                                     <f:FormElement id="_IDGenFormElement6" label="Supplier Name">
                                         <f:fields>
-                                            <Input id="txtSupplier" description="" value="" />
+                                            <Input id="txtSupplier" description="" value="" change="changeValueState" />
                                         </f:fields>
                                     </f:FormElement>
 
@@ -87,7 +87,7 @@
                                 <f:formElements>
                                     <f:FormElement id="_IDGenFormElement7" label="Weight Measure">
                                         <f:fields>
-                                            <Input id="txtWeightMeasure"/>
+                                            <Input id="txtWeightMeasure" type="Number" change="changeValueState"/>
                                         </f:fields>
                                         <f:label>
                                         </f:label>
@@ -112,7 +112,7 @@
 
                     <f:Form width="" id="frmDetails" editable="true" class="sapUiSmallMarginTop">
                         <f:title>
-                            <core:Title
+                            <core:Title id="_IDGenTitle3"
                                 emphasized="false"
                                 icon="sap-icon://detail-more"
                                 level="Auto"
@@ -131,6 +131,7 @@
                                     <f:FormElement id="_IDGenFormElement9" label="Date of Sale">
                                         <f:fields>
                                             <DatePicker id="dtSale"
+                                                change="changeValueState"
                                                 placeholder="Enter Date"
                                                 class="sapUiSmallMarginBottom"
                                             >
@@ -138,15 +139,30 @@
                                         </f:fields>
                                     </f:FormElement>
 
-                                    <f:FormElement id="_IDGenFormElement10" label="Quantity">
+                                    <f:FormElement id="_IDGenFormElement11" label="Available Status"
+                                        visible="true"
+                                    >
                                         <f:fields>
-                                            <Input id="txtQuantity" value=""/>
+                                            <Switch id="swStatus" state="true" customTextOn="YES" customTextOff="NO">
+                                                <layoutData>
+                                                    <FlexItemData id="_IDGenFlexItemData1" growFactor="1">
+                                                    </FlexItemData>
+                                                </layoutData>
+                                            </Switch>
                                         </f:fields>
                                         <f:label>
                                         </f:label>
                                     </f:FormElement>
 
-                                    <f:FormElement id="_IDGenFormElement11" label="Currency Code">
+                                    <f:FormElement id="_IDGenFormElement10" label="Quantity">
+                                        <f:fields>
+                                            <Input id="txtQuantity" value="" type="Number" change="changeValueState"/>
+                                        </f:fields>
+                                        <f:label>
+                                        </f:label>
+                                    </f:FormElement>
+
+                                    <f:FormElement id="_IDGenFormElement12" label="Currency Code">
                                         <f:fields>
                                             <RadioButtonGroup id="rbgCurrency" columns="2" valueState="Success" >
                                                 <RadioButton id="rbCurrency1" text="EUR" selected="true"></RadioButton>
@@ -157,15 +173,14 @@
                                         </f:label>
                                     </f:FormElement>
 
-                                    <f:FormElement id="_IDGenFormElement12" label="Price">
+                                    <f:FormElement id="_IDGenFormElement13" label="Price">
                                         <f:fields>
-                                         <Input id="txtPrice" value=""/>
+                                         <Input id="txtPrice" value="" type="Number" change="changeValueState"/>
                                         </f:fields>
                                         <f:label>
                                         </f:label>
                                     </f:FormElement>
                                 </f:formElements>
-                           
                             </f:FormContainer>
                          </f:formContainers>
                         <f:title>
@@ -178,10 +193,10 @@
             </l:Grid>
         </content>
         <footer>
-            <Toolbar>
-                <ToolbarSpacer/>
-                <Button text="Submit" type="Accept" press="onSubmitPress"/>
-                <Button text="Cancel" type="Reject" press="onReject"/>
+            <Toolbar id="_IDGenToolbar1">
+                <ToolbarSpacer id="_IDGenToolbarSpacer1"/>
+                <Button id="_IDGenButton1" text="Submit" type="Accept" press="onSubmit"/>
+                <Button id="_IDGenButton2" text="Cancel" type="Reject" press="onReject"/>
             </Toolbar>
 
         </footer>
