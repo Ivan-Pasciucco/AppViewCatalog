@@ -1,0 +1,201 @@
+<c:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:c="sap.ui.core"
+    xmlns:f="sap.ui.layout.form">
+    
+    <Dialog title="Form" id="frgDialogForm">
+        <content>
+            <VBox id="_IDGenVBox2" class="sapUiSmallMargin" alignContent="SpaceAround">
+                <f:Form id="frmGeneral" editable="true">
+                    <f:title>
+                        <c:Title id="_IDGenTitle1" icon="sap-icon://detail-view" text="General Info" />
+                    </f:title>
+                    <f:layout>
+                        <f:ResponsiveGridLayout id="_IDGenResponsiveGridLayout1" labelSpanXL="12" labelSpanL="12" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false" />
+                    </f:layout>
+                    <f:formContainers>
+                        <f:FormContainer id="_IDGenFormContainer1">
+                            <f:formElements>
+                                <f:FormElement id="_IDGenFormElement1" label="Product Id">
+                                    <f:fields>
+                                        <Input id="txtProductId" description="" value="" change="changeValueState"/>
+                                    </f:fields>
+                                </f:FormElement>
+
+                                <f:FormElement id="_IDGenFormElement2" label="Main Category">
+                                    <f:fields>
+                                        <ComboBox id="cboMainCategory" change="changeValueState" items="{
+                                                path: 'mProduct>/MainCategories',
+                                                sorter: {
+                                                    path: 'text'
+                                                }
+                                            }">
+                                            <c:Item id="_IDGenItem1" key="{mProduct>key}" text="{mProduct>text}" />
+                                        </ComboBox>
+
+
+                                    </f:fields>
+
+                                </f:FormElement>
+                                <f:FormElement id="_IDGenFormElement3" label="Category">
+                                    <f:fields>
+                                        <ComboBox id="cboCategory" change="changeValueState" items="{
+                                            path: 'mProduct>/Categories',
+                                            sorter: {
+                                                path: 'text'
+                                            }
+                                        }">
+                                            <c:Item id="_IDGenItem2" key="{mProduct>key}" text="{mProduct>text}" />
+                                        </ComboBox>
+                                    </f:fields>
+                                </f:FormElement>
+
+                                <f:FormElement id="_IDGenFormElement4" label="Name">
+                                    <f:fields>
+                                        <Input id="txtName" description="" value="" change="changeValueState"/>
+                                    </f:fields>
+                                </f:FormElement>
+
+                                <f:FormElement id="_IDGenFormElement5" label="Description">
+                                    <f:fields>
+                                        <Input id="txtDescription" description="" value="" change="changeValueState"/>
+                                    </f:fields>
+                                </f:FormElement>
+                                <f:FormElement id="_IDGenFormElement6" label="Supplier Name">
+                                    <f:fields>
+                                        <Input id="txtSupplier" description="" value="" change="changeValueState" />
+                                    </f:fields>
+                                </f:FormElement>
+
+                            </f:formElements>
+                            <f:title />
+                            <f:toolbar />
+                        </f:FormContainer>
+                    </f:formContainers>
+                </f:Form>
+                <f:Form id="frmWeight" editable="true" class="sapUiSmallMarginTop">
+                    <f:title>
+                        <c:Title id="_IDGenTitle2" icon="sap-icon://measure" text="Weight" />
+                    </f:title>
+                    <f:layout>
+                        <f:ResponsiveGridLayout id="_IDGenResponsiveGridLayout2" labelSpanXL="12" labelSpanL="12" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false" />
+                    </f:layout>
+                    <f:formContainers>
+                        <f:FormContainer id="_IDGenFormContainer2">
+                            <f:formElements>
+                                <f:FormElement id="_IDGenFormElement7" label="Weight Measure">
+                                    <f:fields>
+                                        <Input id="txtWeightMeasure" type="Number" change="changeValueState"/>
+                                    </f:fields>
+                                    <f:label>
+                                    </f:label>
+                                </f:FormElement>
+
+                                <f:FormElement id="_IDGenFormElement8" label="Weight Unit">
+                                    <f:fields>
+                                        <RadioButtonGroup id="rbgWeightUnit" columns="2">
+                                            <RadioButton id="rbWeightUnit1" text="KG" selected="true"/>
+                                            <RadioButton id="rbWeightUnit2" text="LB"/>
+                                        </RadioButtonGroup>
+                                    </f:fields>
+                                </f:FormElement>
+                            </f:formElements>
+                            <f:title>
+                            </f:title>
+                            <f:toolbar>
+                            </f:toolbar>
+                        </f:FormContainer>
+                    </f:formContainers>
+                </f:Form>
+
+                <f:Form width="" id="frmDetails" editable="true" class="sapUiSmallMarginTop">
+                    <f:title>
+                        <c:Title id="_IDGenTitle3"
+                            emphasized="false"
+                            icon="sap-icon://detail-more"
+                            level="Auto"
+                            text="Details"
+                        >
+                            
+                        </c:Title>
+                    </f:title>
+                
+                    <f:layout>
+                        <f:ResponsiveGridLayout id="_IDGenResponsiveGridLayout3" labelSpanXL="12" labelSpanL="12" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false" />
+                    </f:layout>
+                    <f:formContainers>
+                        <f:FormContainer id="_IDGenFormContainer3">
+                            <f:formElements>
+                                <f:FormElement id="_IDGenFormElement9" label="Date of Sale">
+                                    <f:fields>
+                                        <DatePicker id="dtSale"
+                                            change="changeValueState"
+                                            placeholder="Enter Date"
+                                            class="sapUiSmallMarginBottom"
+                                        >
+                                        </DatePicker>
+                                    </f:fields>
+                                </f:FormElement>
+
+                                <f:FormElement id="_IDGenFormElement11" label="Available Status"
+                                    visible="true"
+                                >
+                                    <f:fields>
+                                        <Switch id="swStatus" state="true" customTextOn="YES" customTextOff="NO">
+                                            <layoutData>
+                                                <FlexItemData id="_IDGenFlexItemData1" growFactor="1">
+                                                </FlexItemData>
+                                            </layoutData>
+                                        </Switch>
+                                    </f:fields>
+                                    <f:label>
+                                    </f:label>
+                                </f:FormElement>
+
+                                <f:FormElement id="_IDGenFormElement10" label="Quantity">
+                                    <f:fields>
+                                        <Input id="txtQuantity" value="" type="Number" change="changeValueState"/>
+                                    </f:fields>
+                                    <f:label>
+                                    </f:label>
+                                </f:FormElement>
+
+                                <f:FormElement id="_IDGenFormElement12" label="Currency Code">
+                                    <f:fields>
+                                        <RadioButtonGroup id="rbgCurrency" columns="2" valueState="Success" >
+                                            <RadioButton id="rbCurrency1" text="EUR" selected="true"></RadioButton>
+                                            <RadioButton id="rbCurrency2" text="USD"></RadioButton>
+                                        </RadioButtonGroup>
+                                    </f:fields>
+                                    <f:label>
+                                    </f:label>
+                                </f:FormElement>
+
+                                <f:FormElement id="_IDGenFormElement13" label="Price">
+                                    <f:fields>
+                                     <Input id="txtPrice" value="" type="Number" change="changeValueState"/>
+                                    </f:fields>
+                                    <f:label>
+                                    </f:label>
+                                </f:FormElement>
+                            </f:formElements>
+                        </f:FormContainer>
+                     </f:formContainers>
+                    <f:title>
+                    </f:title>
+                    <f:toolbar>
+                    </f:toolbar>
+                </f:Form>
+
+            </VBox>
+        </content>
+        <footer>
+            <Toolbar id="_IDGenToolbar1">
+                <ToolbarSpacer id="_IDGenToolbarSpacer1"/>
+                <Button id="_IDGenButton1" text="Submit" type="Accept" press="onSubmit"/>
+                <Button id="_IDGenButton2" text="Cancel" type="Reject" press="onReject"/>
+            </Toolbar>
+
+        </footer>
+    </Dialog>
+</c:FragmentDefinition>

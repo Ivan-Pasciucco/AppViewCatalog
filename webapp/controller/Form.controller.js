@@ -6,7 +6,7 @@ sap.ui.define(
     return BaseController.extend(
       "sap.demo.appview.appviewcatalog.controller.Form",
       {
-        onInit: function () {},
+        onInit: function () { },
 
         getValues: function () {
           let productId = this.getById("txtProductId").getValue();
@@ -71,12 +71,12 @@ sap.ui.define(
           this.clearInputs();
           this.onNavTo("RouteMain");
         },
-		changeValueState:function(oEvent){
-			let oValue = oEvent.getSource().getValue();
-			if(oValue){
-				oEvent.getSource().setValueState("None");
-			}
-		},
+        changeValueState: function (oEvent) {
+          let oValue = oEvent.getSource().getValue();
+          if (oValue) {
+            oEvent.getSource().setValueState("None");
+          }
+        },
         onSubmit: function () {
           const _this = this;
 

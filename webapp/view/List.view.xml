@@ -3,8 +3,14 @@
     xmlns:mvc="sap.ui.core.mvc"
     displayBlock="true"
     xmlns="sap.m"
+    xmlns:core="sap.ui.core"
 >
     <Page id="_IDGenPage1" title="List View" showNavButton="true" navButtonPress="onNavBack">
+        <headerContent>
+            <Button id="btnOpenForm" text="Open Form" press="onOpenDialog"/>
+            <core:Fragment fragmentName="sap.demo.appview.appviewcatalog.view.fragments.ButtonTheme" type="XML"></core:Fragment>
+        </headerContent>
+
         <content>
             <VBox id="_IDGenVBox1" class="sapUIContentPadding sapuiSmallMargin">
                 <OverflowToolbar id="otb1">
@@ -14,7 +20,7 @@
 
                 <List
                     id="listProducts"
-                    headerText="Productos"
+                    headerText="Products"
                     items="{path: 'mProduct>/ProductCollection'}"
                     mode="SingleSelectMaster"
                     itemPress="onPressProduct"

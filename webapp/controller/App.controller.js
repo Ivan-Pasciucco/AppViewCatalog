@@ -1,14 +1,14 @@
 sap.ui.define(
-    [
-        "sap/ui/core/mvc/Controller"
-    ],
-    function(BaseController) {
-      "use strict";
-  
-      return BaseController.extend("sap.demo.appview.appviewcatalog.controller.App", {
-        onInit() {
-        }
-      });
-    }
-  );
-  
+  [
+    "./Base.Controller"
+  ],
+  function (BaseController) {
+    "use strict";
+
+    return BaseController.extend("sap.demo.appview.appviewcatalog.controller.App", {
+      onInit() {
+        this._initTheme();
+      },
+    });
+  }
+);

@@ -1,0 +1,9 @@
+<c:FragmentDefinition
+	xmlns="sap.m" xmlns:c="sap.ui.core"
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+>
+<Button id="btnLight" icon="sap-icon://lightbulb" press="onTheme" text="Light" app:tipoTema="L"/>
+
+<Button id="btnDark"  icon="sap-icon://log" press="onTheme" text="Dark" app:tipoTema="D"/>
+
+</c:FragmentDefinition>

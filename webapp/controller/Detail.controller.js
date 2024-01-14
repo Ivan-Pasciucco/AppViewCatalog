@@ -13,7 +13,7 @@ sap.ui.define([
             this.getRouter().getRoute("ViewDetail").attachMatched(this._onRouteMatched, this)
             //let oRouter = UIComponent.getRouterFor(this);
             //pasamos el nombre de la ruta y cuando la encuentra ejecuta la funcion, this es para pasarle el contexto del onInit
-           // oRouter.getRoute("ViewDetail").attachMatched(this._onRouteMatched, this)
+            // oRouter.getRoute("ViewDetail").attachMatched(this._onRouteMatched, this)
         },
 
         _onRouteMatched: function (oEvent) {
@@ -33,7 +33,7 @@ sap.ui.define([
         _onBindingChange: function (oEvent) {
             let oRouter = this.getRouter()
             //obtenemos el contexto e informacion enlazada mediante el objeto que sera el item
-            if(!oEvent.getSource().getBoundContext().getObject()){
+            if (!oEvent.getSource().getBoundContext().getObject()) {
                 oRouter.getTargets().display("TargetNotFound")
             }
 

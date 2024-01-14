@@ -3,14 +3,14 @@
 
         {
             "Title": "View List",
-            "Description" : "Visualización de colección de Items",
+            "Description" : "Product list display",
             "Icon": "sap-icon://list",
             "view": "ViewList"
 
         },
         {
             "Title": "View Form",
-            "Description" : "Visualización de Formularios",
+            "Description" : "Form display",
             "Icon": "sap-icon://list",
             "view": "ViewForm"
 

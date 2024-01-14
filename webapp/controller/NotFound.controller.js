@@ -1,6 +1,6 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller"
-], function(
+], function (
 	Controller
 ) {
 	"use strict";
